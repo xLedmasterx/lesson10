@@ -1,469 +1,621 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
-	<title>Lesson 10 - Курс Зима 2022</title>
+	<title>Lesson 10 - home2</title>
 </head>
 
 <body>
 	<div class="wrapper">
-		<header></header>
-		<main class="page">
-			<!-- Б.Э.М. -->
-
-			<!-- Блок -->
-			<!--
-				НЕЗАВИСИМЫЙ объект.
-				НЕ влияет на окружение (внешние объекты).
-
-				Имя класса БЭМ блока:
-				1) Имя должно соответствовать
-					содержанию либо конструкции
-					Отвечать на вопрос "Что это?"
-				2) Английский язык (Латиница)
-				3) Нижний регистр
-				4) Если слов несколько, разделяем дефисом (-).
-				5) НИКАКОЙ ИЕРАРХИИ!!!
-
-				Мы можем вкладывать
-				сколько угодно БЭМ блоков друг в друга,
-				также БЭМ блоки можно вкладывать в БЭМ элементы
-				-->
-
-			<div class="text">
-				<a href="" class="button">Тут текст</a>
-			</div>
-
-			<div class="latest-posts">
-				<!-- НЕ верно (Попытка иерархии) -->
-				<div class="latest-posts-container">
-
-				</div>
-				<!-- Может быть -->
-				<div class="container-latest-posts">
-
-				</div>
-				<!-- Лучший варик (но, есть нюансы) -->
-				<div class="container">
-
-				</div>
-			</div>
-
-			<!-- Элемент -->
-			<!--
-				ЗАВИСИМЫЙ объект от своего БЭМ блока
-				ВСЕГДА находится внутри своего БЭМ блока
-				МОЖЕТ влиять на окружение (внешние объекты)
-
-				Имя класса БЭМ элемента:
-				0) Всегда начинается с имени
-				первого родительского БЭМ блока и отделяется
-					двумя нижними подчеркиваниями (__)
-				1) Имя должно соответствовать
-					содержанию либо конструкции.
-					Отвечать на вопрос "Что это?"
-				2) Английский язык (Латиница)
-				3) Нижний регистр
-				4) Если слов несколько, разделяем дефисом (-).
-				5) НИКАКОЙ ИЕРАРХИИ!!!
-
-				БЭМ элементы можно вкладивать в другие
-				БЭМ элементы своего БЭМ блока
-				-->
-
-			<div class="latest-posts">
-				<a href="" class="latest-posts__link"></a>
-			</div>
-
-			<div class="latest-posts">
-				<div class="container">
-					<a href="" class="container__link"></a>
-				</div>
-			</div>
-
-			<div class="latest-posts">
-				<div class="latest-posts__container">
-					<a href="" class="latest-posts__link"></a>
-				</div>
-			</div>
-
-
-			<div class="contacts">
-				<div class="contacts__container">
-					<div class="about-us">
-						<a href="" class="about-us__link"></a>
+		<!--header-->
+		<header class="header">
+			<div class="header__container">
+				<!--navbar-->
+				<nav class="navbar">
+					<a class="navbar__logo" href="#">
+						<img src="img/icons/logo.png" alt="logo">
+					</a>
+					<ul class="navbar__items item-navbar">
+						<li class="item-navbar__list">
+							<a class="item-navbar__link" href="#">About Us</a>
+						</li>
+						<li class="item-navbar__list">
+							<a class="item-navbar__link" href="#">Courses</a>
+						</li>
+						<li class="item-navbar__list">
+							<a class="item-navbar__link" href="#">Events</a>
+						</li>
+						<li class="item-navbar__list">
+							<a class="item-navbar__link" href="#">Blog</a>
+						</li>
+						<li class="item-navbar__list"><a class="item-navbar__link" href="#">Contacts</a>
+						</li>
+					</ul>
+					<a class="navbar__link button" href="#">Get consultation</a>
+					<a class="navbar__link button" href="#">Log in / Register</a>
+				</nav>
+				<!--header-content-->
+				<div class="header-content content-header">
+					<div class="content-header__play play-header">
+						<a class="play-header__button" href="http://www.youtube.com"></a>
+						<span class="play-header-text">Play showreel</span>
 					</div>
-					<a href="" class="contacts__link"></a>
-				</div>
-			</div>
-
-			<!-- Модификатор -->
-			<!--
-				Позволяет вносить отличия
-				для БЭМ блока либо БЭМ элемента
-
-				Имя класса БЭМ модификатора:
-				0) Добавляется как еще один класс
-				для БЭМ блока или БЭМ элемента.
-				Начинается с полного имени БЭМ блока или БЭМ элемента и отделяется
-					одним нижними подчеркиванием (_)
-				1) Имя должно соответствовать
-					вносимым модификациям. Отвечать на вопрос "какой? что изменяем?"
-				2) Английский язык (Латиница)
-				3) Нижний регистр
-				4) Если слов несколько, разделяем дефисом (-).
-				5) НИКАКОЙ ИЕРАРХИИ!!!
-				-->
-
-			<div class="content-header">
-				<div class="content-header__sub-title"></div>
-				<h2 class="content-header__title"></h2>
-			</div>
-
-			<div class="content-header">
-				<div class="content-header__sub-title"></div>
-				<h2 class="content-header__title"></h2>
-			</div>
-
-			<!-- Модификатор для блока -->
-			<!-- Этот по центру -->
-			<div class="content-header content-header_center">
-				<div class="content-header__sub-title"></div>
-				<h2 class="content-header__title"></h2>
-			</div>
-
-
-			<!-- Модификатор для элемента -->
-			<div class="contacts">
-				<a href="" class="contacts__link"></a>
-				<a href="" class="contacts__link contacts__link_red contacts__link_font-size"></a>
-				<a href="" class="contacts__link contacts__link_font-size"></a>
-			</div>
-
-
-			<!-- Примеры -->
-
-			<div class="who-we-are">
-				<div class="who-we-are__container">
-					<div class="who-we-are__image">
-						<img src="img/01.png" alt="">
+					<h1 class="content-header__title">
+						Enjoy studying with Createx Online Courses
+					</h1>
+					<div class="content-header__link">
+						<a class="content-header__button button" href="#">About us</a>
+						<a class="content-header__button button" href="#">Explore courses</a>
 					</div>
-					<div class="who-we-are__content">
-						<div class="block-header block-header_margin">
-							<div class="block-header__sub-title"></div>
-							<h2 class="block-header__title"></h2>
-						</div>
-						<ul class="list">
-							<li class="list__item"></li>
-							<li class="list__item"></li>
-							<li class="list__item"></li>
-							<li class="list__item"></li>
-							<li class="list__item"></li>
+					<div class="content-header__image">
+						<img src="img/illustration.png" alt="illustration">
+					</div>
+					<!--content-header__info-->
+					<div class="content-header__info info-content-header">
+						<ul class="info-content-header__items">
+							<li class="info-content-header__list">
+								<span class="info-content-header__number">1200</span>
+								Students graduated
+							</li>
+							<li class="info-content-header__list">
+								<span class="info-content-header__number">84</span>
+								Completed courses
+							</li>
+							<li class="info-content-header__list">
+								<span class="info-content-header__number">16</span>
+								Qualified tutors
+							</li>
+							<li class="info-content-header__list">
+								<span class="info-content-header__number">5</span>
+								Years of experience
+							</li>
 						</ul>
-						<a href="" class="button"></a>
 					</div>
 				</div>
 			</div>
-
-
-			<!-- Микс -->
-			<!--
-				Смесь БЭМ блока и БЭМ элемента
-				для одного объекта.
-				При этом БЭМ элемент может
-				выступать в роли БЭМ модификатора
-				-->
-
-
-			<!-- Микс в роли модификатора -->
-
-			<div class="who-we-are">
-				<div class="who-we-are__container">
-					<div class="who-we-are__image">
-						<img src="img/01.png" alt="">
-					</div>
-					<div class="who-we-are__content">
-						<!-- МИКС! -->
-						<div class="who-we-are__block-header block-header">
-							<div class="block-header__sub-title"></div>
-							<h2 class="block-header__title"></h2>
+		</header>
+		<!--main-->
+		<main class="main">
+			<div class="main-container">
+				<!--who-we-are-->
+				<div class="who-we-are">
+					<div class="who-we-are__container">
+						<!--who-we-are__image-->
+						<div class="who-we-are__image">
+							<img src="img/image_girl.png" alt="girl">
 						</div>
-						<ul class="list">
-							<li class="list__item"></li>
-							<li class="list__item"></li>
-							<li class="list__item"></li>
-							<li class="list__item"></li>
-							<li class="list__item"></li>
+						<!--who-we-are__content-->
+						<div class="who-we-are__content content-who-we-are">
+							<div class="block-header__sub-title">Who we are</div>
+							<h2 class="block-header__title">Why Createx?</h2>
+						</div>
+						<!--who-we-are__list-->
+						<ul class="who-we-are__list">
+							<li class="list__item">A fermentum in morbi pretium aliquam adipiscing donec tempus.</li>
+							<li class="list__item">Vulputate placerat amet pulvinar lorem nisl.</li>
+							<li class="list__item">Consequat feugiat habitant gravida quisque elit bibendum id adipiscing sed.</li>
+							<li class="list__item">Etiam duis lobortis in fames ultrices commodo nibh.</li>
+							<li class="list__item">Tincidunt sagittis neque sem ac eget.</li>
+							<li class="list__item">Ultricies amet justo et eget quisque purus vulputate dapibus tortor.</li>
 						</ul>
-						<a href="" class="button"></a>
+						<!--who-we-are__button-->
+						<a class="who-we-are__button" href="#">More about us</a>
 					</div>
 				</div>
-			</div>
-			<div class="contacts">
-				<div class="contacts__block-header block-header">
-					<div class="block-header__sub-title"></div>
-					<h2 class="block-header__title"></h2>
-				</div>
-			</div>
-
-
-			<!-- Микс в роли высвобождения имен -->
-
-			<div class="about-us">
-				<div class="about-us__container">
-					<div class="about-us__items">
-						<div class="about-us__item item-about-us">
-							<a href="" class="item-about-us__link"></a>
+				<!--ready to learn-->
+				<div class="ready-to-learn">
+					<!--block-header-->
+					<div class="block-header">
+						<h3 class="block-header__sub-title">Ready to learn?</h3>
+						<h2 class="block-header__title">Featured Courses</h2>
+					</div>
+					<!--ready-to-learn__button-->
+					<div class="ready-to-learn__button button"> View all courses
+					</div>
+					<!--ready-to-learn__cards-->
+					<div class="ready-to-learn__cards">
+						<!--ready-to-learn__card-1-->
+						<div class="ready-to-learn__card card-ready-to-learn">
+							<div class="card-ready-to-learn__image image_small">
+								<img src="img/Jeromy.png" alt="man">
+							</div>
+							<div class="card-ready-to-learn__content">
+								<span class="card-ready-to-learn__success">Marketing</span>
+								<h5 class="card-ready-to-learn__title">The Ultimate Google Ads Training Course</h5>
+								<div class="card-ready-to-learn__info">
+									<span class="card-ready-to-learn__money">100$</span>
+									<span class="card-ready-to-learn__name">by Jerome Bell</span>
+								</div>
+							</div>
 						</div>
-					</div>
-					<a href="" class="about-us__link">Я ссылка</a>
-				</div>
-			</div>
-
-
-			<!-- ============================ Правильно / неправильно =================================== -->
-
-
-			<!-- неправильно (слова разделяем -) -->
-			<div class="aboutus">
-				<a href="" class="aboutus__link"></a>
-			</div>
-
-			<!-- правильно (слова разделяем -) -->
-			<div class="about-us">
-				<a href="" class="about-us__link"></a>
-			</div>
-
-			<!-- ------------------------------------------ -->
-
-
-			<!-- неправильно (элемент НЕ в своем блоке) -->
-			<div class="contacts">
-				<div class="contacts__container">
-					<div class="about-us">
-						<a href="" class="contacts__link"></a>
-					</div>
-				</div>
-			</div>
-
-			<!-- правильно (элемент в своем блоке) -->
-			<div class="contacts">
-				<div class="contacts__container">
-					<div class="about-us">
-						<a href="" class="about-us__link"></a>
-					</div>
-				</div>
-			</div>
-
-			<!-- ------------------------------------------ -->
-
-			<!-- неправильно (элемент несуществующего блока) -->
-			<div class="subscribe">
-				<div class="subscribe__form">
-					<div class="form__item"></div>
-				</div>
-			</div>
-
-			<!-- правильно (элемент своего блока) -->
-			<div class="subscribe">
-				<div class="subscribe__form">
-					<div class="subscribe__item"></div>
-				</div>
-			</div>
-
-
-			<!-- ------------------------------------------ -->
-
-			<!-- правильно -->
-			<div class="object">
-				<div class="object__container">
-					<div class="object__row">
-						<div class="object__column">
-							<div class="object__item">
-								<div class="object__image"></div>
-								<div class="object__body">
-									<div class="object__text"></div>
-									<!-- Это отдельный блок -->
-									<a href="" class="link"></a>
+						<!--ready-to-learn__card-2-->
+						<div class="ready-to-learn__card card-ready-to-learn">
+							<div class="card-ready-to-learn__image image_small">
+								<img src="img/Leslie.png" alt="woman">
+							</div>
+							<div class="card-ready-to-learn__content">
+								<span class="card-ready-to-learn__success">HR & Recruting</span>
+								<h5 class="card-ready-to-learn__title">HR Management and Analytics</h5>
+								<div class="card-ready-to-learn__info">
+									<span class="card-ready-to-learn__money">200$</span>
+									<span class="card-ready-to-learn__name">by Leslie Alexander Li</span>
+								</div>
+							</div>
+						</div>
+						<!--ready-to-learn__card-3-->
+						<div class="ready-to-learn__card card-ready-to-learn">
+							<div class="card-ready-to-learn__image image_small">
+								<img src="img/Dianne.png" alt="woman">
+							</div>
+							<div class="card-ready-to-learn__content">
+								<span class="card-ready-to-learn__success">Management</span>
+								<h5 class="card-ready-to-learn__title">Business Development Management</h5>
+								<div class="card-ready-to-learn__info">
+									<span class="card-ready-to-learn__money">400$</span>
+									<span class="card-ready-to-learn__name">by Dianne Russell</span>
+								</div>
+							</div>
+						</div>
+						<!--ready-to-learn__card-4-->
+						<div class="ready-to-learn__card card-ready-to-learn">
+							<div class="card-ready-to-learn__image image_small">
+								<img src="img/Marvin.png" alt="man">
+							</div>
+							<div class="card-ready-to-learn__content">
+								<span class="card-ready-to-learn__success">Management</span>
+								<h5 class="card-ready-to-learn__title">Prduct Management Fundamentals</h5>
+								<div class="card-ready-to-learn__info">
+									<span class="card-ready-to-learn__money">480$</span>
+									<span class="card-ready-to-learn__name">by Marvin McKinney</span>
+								</div>
+							</div>
+						</div>
+						<!--ready-to-learn__card-5-->
+						<div class="ready-to-learn__card card-ready-to-learn">
+							<div class="card-ready-to-learn__image image_small">
+								<img src="img/Kristin.png" alt="woman">
+							</div>
+							<div class="card-ready-to-learn__content">
+								<span class="card-ready-to-learn__success">Marketing</span>
+								<h5 class="card-ready-to-learn__title">Brand Management & PR Communications</h5>
+								<div class="card-ready-to-learn__info">
+									<span class="card-ready-to-learn__money">530$</span>
+									<span class="card-ready-to-learn__name">by Kristin Watson</span>
+								</div>
+							</div>
+						</div>
+						<!--ready-to-learn__card-6-->
+						<div class="ready-to-learn__card card-ready-to-learn">
+							<div class="card-ready-to-learn__image image_small">
+								<img src="img/Guy.png" alt="man">
+							</div>
+							<div class="card-ready-to-learn__content">
+								<span class="card-ready-to-learn__success">Design</span>
+								<h5 class="card-ready-to-learn__sub-title">Graphic Design Basic</h5>
+								<div class="card-ready-to-learn__info">
+									<span class="card-ready-to-learn__money">500$</span>
+									<span class="card-ready-to-learn__name">by Guy Hawkins</span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<!-- Это отдельный блок -->
-					<div class="items">
-						<div class="items__item"></div>
-					</div>
 				</div>
-			</div>
-
-
-			<!-- ------------------------------------------ -->
-
-			<!-- правильно -->
-			<a href="" class="link">
-				<div class="link__text"></div>
-				<div class="link__title"></div>
-			</a>
-
-			<!-- ------------------------------------------ -->
-
-			<!-- не совсем правильно -->
-			<div class="contacts">
-				<div class="contacts__container">
-					<div class="contacts__body body-contacts">
-						<div class="body-contacts__column">
-							<div class="body-contacts__picture">
-								<img src="img/01.png" alt="Картинка">
-							</div>
+				<!--our benefits-->
+				<div class="our-benefits">
+					<div class="our-benefits__container">
+						<!--block-header-->
+						<div class="block-header">
+							<h3 class="block-header__sub-title">Our benefits</h3>
+							<h2 class="block-header__title">That’s how we do it</h2>
 						</div>
-						<div class="body-contacts__column">
-							<div class="body-contacts__picture">
-								<img src="img/01.png" alt="Картинка">
-							</div>
+						<!--our-benefits__section-->
+						<div class="our-benefits__section">
+							<div class="our-benefits__button button"> Experienced Tutors</div>
+							<div class="our-benefits__button button"> Feedback & Support</div>
+							<div class="our-benefits__button button"> 24/7 Online Library</div>
+							<div class="our-benefits__button button"> Community</div>
+						</div>
+						<!--our-benefits__content-->
+						<div class="our-benefits__content">
+							<h3 class="our-benefits__title">Only practicing tutors</h3>
+							<p class="our-benefits__text">Urna nisi, arcu cras nunc. Aenean quam est lobortis mi non fames dictum suspendisse. Morbi mauris cras massa ut dolor quis sociis mollis augue. Nunc, sodales tortor sit diam mi amet massa. Fermentum diam diam sociis vestibulum. Nulla nisl accumsan, id dignissim massa ut amet. Amet enim, nisi tempus vehicula.</p>
+						</div>
+						<!--our-benefits__image-->
+						<div class="our-benefits__image">
+							<img src="img/illustration2.png" alt="illustration">
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<!-- правильно -->
-			<div class="contacts">
-				<div class="contacts__container">
-					<div class="contacts__body body-contacts">
-						<div class="body-contacts__column">
-							<div class="body-contacts__picture">
-								<img class="body-contacts__image" src="img/01.png" alt="Картинка">
+				<!--our-events-->
+				<div class="our-events">
+					<div class="our-events__container">
+						<!--block-header-->
+						<div class="block-header block-header_center">
+							<h3 class="block-header__sub-title">Our Events</h3>
+							<h2 class="block-header__title">Lectures & workshops</h2>
+						</div>
+						<!--our-events_items-->
+						<div class="our-events_items">
+							<!--our-events_item-1-->
+							<div class="our-events_item item-our-events">
+								<div class="item-our-events__date date-item-our-events">
+									<div class="date-item-our-events__day">05</div>
+									<div class="date-item-our-events__month">August </div>
+									<div class="date-item-our-events__time">11:00 – 14:00</div>
+								</div>
+								<div class="item-our-events__body body-item-our-events">
+									<div class="body-item-our-events__text">Formation of the organizational structure of the company in the face of uncertainty.</div>
+									<div class="body-item-our-events__info">Onine master-class</div>
+								</div>
+								<a href="" class="item-our-events__button button">View more</a>
+							</div>
+							<!--our-events_item-2-->
+							<div class="our-events_item item-our-events">
+								<div class="item-our-events__date date-item-our-events">
+									<div class="date-item-our-events__day">24</div>
+									<div class="date-item-our-events__month">July </div>
+									<div class="date-item-our-events__time">11:00 – 12:30</div>
+								</div>
+								<div class="item-our-events__body body-item-our-events">
+									<div class="body-item-our-events__text">Building a customer service department. Best Practices.</div>
+									<div class="body-item-our-events__info">Onine lecture</div>
+								</div>
+								<a href="" class="item-our-events__button button">View more</a>
+							</div>
+							<!--our-events_item-3-->
+							<div class="our-events_item item-our-events">
+								<div class="item-our-events__date date-item-our-events">
+									<div class="date-item-our-events__day">16</div>
+									<div class="date-item-our-events__month">July </div>
+									<div class="date-item-our-events__time">10:00 – 13:00</div>
+								</div>
+								<div class="item-our-events__body body-item-our-events">
+									<div class="body-item-our-events__text">How to apply methods of speculative design in practice. Worldbuilding prototyping.</div>
+									<div class="body-item-our-events__info">Onine workshop</div>
+								</div>
+								<a href="" class="item-our-events__button button">View more</a>
 							</div>
 						</div>
-						<div class="body-contacts__column">
-							<div class="body-contacts__picture">
-								<img class="body-contacts__image" src="img/01.png" alt="Картинка">
+						<!--our-events__footer-->
+						<div class="our-events__footer footer-our-events">
+							<div class="footer-our-events__text">Do you want more?</div>
+							<a href="" class="footer-our-events__button button">Explore all events</a>
+						</div>
+					</div>
+				</div>
+				<!--Createx Certificate-->
+				<div class="createx-certificate">
+					<div class="createx-certificate__container">
+						<!--block-header-->
+						<div class="block-header block-header">
+							<h3 class="block-header__sub-title">Createx Certificate</h3>
+							<h2 class="block-header__title">Your expertise will be confirmed</h2>
+						</div>
+						<!--createx-certificate__example-->
+						<div class="createx-certificate__example example-createx-certificate">
+							<div class="example-createx-certificate__text">We are accredited by international professional organizations and institutes:
+							</div>
+							<div class="example-createx-certificate__logos">
+								<div class="example-createx-certificate__icon">
+									<img src="img/icons/logo1.png" alt="logo">
+								</div>
+								<div class="example-createx-certificate__icon">
+									<img src="img/icons/Logo2.png" alt="logo">
+								</div>
+								<div class="example-createx-certificate__icon">
+									<img src="img/icons/Logo3.png" alt="logo">
+								</div>
+							</div>
+						</div>
+						<!--createx-certificate__image-->
+						<div class="createx-certificate__image">
+							<img src="img/certificat.png" alt="certificat">
+						</div>
+					</div>
+				</div>
+				<!--our-team-->
+				<div class="our-team">
+					<div class="our-team__container">
+						<!--block-header-->
+						<div class="block-header block-header">
+							<h3 class="block-header__sub-title">Createx Certificate</h3>
+							<h2 class="block-header__title">Your expertise will be confirmed</h2>
+						</div>
+						<!--our-team__control-->
+						<div class="our-team__control">
+							<div class="button-control">
+								<img src="img/icons/prev-btn.png" alt="icon">
+							</div>
+							<div class="button-control">
+								<img src="img/icons/Right.png" alt="icon">
+							</div>
+						</div>
+						<!--our-team__cards-->
+						<div class="our-team__cards">
+							<!--our-team__card-1-->
+							<div class="our-team__card card-our-team">
+								<div class="card-our-team__image image_big">
+									<img src="/img/Dianne.png" alt="woman">
+								</div>
+								<div class="card-our-team__name">Dianne Russell</div>
+								<div class="card-our-team__position">Founder and CEO</div>
+							</div>
+							<!--our-team__card-2-->
+							<div class="our-team__card card-our-team">
+								<div class="card-our-team__image image_big">
+									<img src="/img/Jeromy.png" alt="man">
+								</div>
+								<div class="card-our-team__name">Jerome Bell</div>
+								<div class="card-our-team__position">Founder and Program Director</div>
+							</div>
+							<!--our-team__card-3-->
+							<div class="our-team__card card-our-team">
+								<div class="card-our-team__image image_big">
+									<img src="/img/Kristin.png" alt="woman">
+								</div>
+								<div class="card-our-team__name">Kristin Watson</div>
+								<div class="card-our-team__position">Marketer, Curator of Marketing Course</div>
+							</div>
+							<!--our-team__card-4-->
+							<div class="our-team__card card-our-team">
+								<div class="card-our-team__image image_big">
+									<img src="/img/Marvin.png" alt="man">
+								</div>
+								<div class="card-our-team__name">Marvin McKinney</div>
+								<div class="card-our-team__position">PM, Curator of Management Course</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<!-- ------------------------------------------ -->
-
-			<!-- неправильно (не имеет смысла) но это не точно)) -->
-			<div class="about-us contacts">
-			</div>
-
-
-			<!-- ------------------------------------------ -->
-
-
-			<!-- неправильно (попытка иерархии) -->
-			<div class="contacts">
-				<div class="contacts__title contacts-title">
-					<div class="contacts-title__item"></div>
-				</div>
-			</div>
-
-			<!-- нормально (если не собираемся переиспользовать блок title-contacts) -->
-			<div class="contacts">
-				<div class="contacts__title title-contacts">
-					<div class="title-contacts__item"></div>
-				</div>
-			</div>
-
-			<!-- совсем хорошо -->
-			<div class="contacts">
-				<div class="contacts__title title">
-					<div class="title__item"></div>
-				</div>
-			</div>
-
-
-			<!-- ------------------------------------------ -->
-
-			<!-- Что по CMS? -->
-
-			<div class="text">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vero a unde totam quidem, veritatis doloribus sit. Consequatur officia quidem amet blanditiis nobis laborum obcaecati a maxime autem. Unde, sunt?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vero a unde totam quidem, veritatis doloribus sit. Consequatur officia quidem amet blanditiis nobis laborum obcaecati a maxime autem. Unde, sunt?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vero a unde totam quidem, veritatis doloribus sit. Consequatur officia quidem amet blanditiis nobis laborum obcaecati a maxime autem. Unde, sunt?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vero a unde totam quidem, veritatis doloribus sit. Consequatur officia quidem amet blanditiis nobis laborum obcaecati a maxime autem. Unde, sunt?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vero a unde totam quidem, veritatis doloribus sit. Consequatur officia quidem amet blanditiis nobis laborum obcaecati a maxime autem. Unde, sunt?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vero a unde totam quidem, veritatis doloribus sit. Consequatur officia quidem amet blanditiis nobis laborum obcaecati a maxime autem. Unde, sunt?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vero a unde totam quidem, veritatis doloribus sit. Consequatur officia quidem amet blanditiis nobis laborum obcaecati a maxime autem. Unde, sunt?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vero a unde totam quidem, veritatis doloribus sit. Consequatur officia quidem amet blanditiis nobis laborum obcaecati a maxime autem. Unde, sunt?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vero a unde totam quidem, veritatis doloribus sit. Consequatur officia quidem amet blanditiis nobis laborum obcaecati a maxime autem. Unde, sunt?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vero a unde totam quidem, veritatis doloribus sit. Consequatur officia quidem amet blanditiis nobis laborum obcaecati a maxime autem. Unde, sunt?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vero a unde totam quidem, veritatis doloribus sit. Consequatur officia quidem amet blanditiis nobis laborum obcaecati a maxime autem. Unde, sunt?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vero a unde totam quidem, veritatis doloribus sit. Consequatur officia quidem amet blanditiis nobis laborum obcaecati a maxime autem. Unde, sunt?</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vero a unde totam quidem, veritatis doloribus sit. Consequatur officia quidem amet blanditiis nobis laborum obcaecati a maxime autem. Unde, sunt?</p>
-			</div>
-
-
-			<!-- ------------------------------------------ -->
-
-			<!-- Контейнер и селектор класса -->
-
-			<div class="contacts">
-				<div class="contacts__container">
-					container
-				</div>
-			</div>
-
-			<div class="about-us">
-				<div class="about-us__container">
-					container
-				</div>
-			</div>
-
-
-			<!-- Пример из макета -->
-
-			<div class="our-events">
-				<div class="our-events__container">
-					<div class="our-events__header block-header">
-						<div class="block-header__sub-title"></div>
-						<h2 class="block-header__title"></h2>
-					</div>
-					<div class="our-events__items">
-						<div class="our-events__item item-our-events">
-							<div class="item-our-events__date date-item-our-events">
-								<div class="date-item-our-events__day"></div>
-								<div class="date-item-our-events__month"></div>
-								<div class="date-item-our-events__time"></div>
-							</div>
-							<div class="item-our-events__body"></div>
-							<a href="" class="item-our-events__button button"></a>
+				<!--testimonials-->
+				<div class="testimonials">
+					<div class="testimonials__container">
+						<!--block-header-->
+						<div class="block-header">
+							<h3 class="block-header__sub-title">TESTIMONIALS</h3>
+							<h2 class="block-header__title">What our students say</h2>
 						</div>
-						<div class="our-events__item item-our-events">
-							<div class="item-our-events__date date-item-our-events">
-								<div class="date-item-our-events__day"></div>
-								<div class="date-item-our-events__month"></div>
-								<div class="date-item-our-events__time"></div>
+						<!--testimonials__quote-->
+						<div class="testimonials__quote">
+							<div class="button-control">
+								<img src="img/icons/prev-btn.png" alt="icon">
 							</div>
-							<div class="item-our-events__body"></div>
-							<a href="" class="item-our-events__button button"></a>
-						</div>
-						<div class="our-events__item item-our-events">
-							<div class="item-our-events__date date-item-our-events">
-								<div class="date-item-our-events__day"></div>
-								<div class="date-item-our-events__month"></div>
-								<div class="date-item-our-events__time"></div>
+							<div class="button-control">
+								<img src="img/icons/Right.png" alt="icon">
 							</div>
-							<div class="item-our-events__body"></div>
-							<a href="" class="item-our-events__button button"></a>
+							<p class="testimonials__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Justo, amet lectus quam viverra mus lobortis fermentum amet, eu. Pulvinar eu sed purus facilisi. Vitae id turpis tempus ornare turpis quis non. Congue tortor in euismod vulputate etiam eros. Pulvinar neque pharetra arcu diam maecenas diam integer in.</p>
+							<div class="testimonials__image">
+								<img src="img/eleanor.png" alt="woman">
+							</div>
+							<div class="testimonials__author">
+								<div class="testimonials__name">Eleanor Pena
+								</div>
+								<div class="testimonials__position">Position, Course
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="our-events__footer footer-our-events">
-						<div class="footer-our-events__text"></div>
-						<a href="" class="footer-our-events__button button"></a>
+				</div>
+				<!--our blog-->
+				<div class="our-blog">
+					<div class="our-blog__container">
+						<!--block-header-->
+						<div class="block-header">
+							<h3 class="block-header__sub-title">Our blog</h3>
+							<h2 class="block-header__title">Latest posts</h2>
+							<div class="ready-to-learn__button button">Go to blog
+							</div>
+						</div>
+						<!--our-blog__items-->
+						<div class="our-blog__items">
+							<!--our-blog__item-1-->
+							<div class="our-blog__item item-our-blog">
+								<div class="item-our-blog__image">
+									<img src="img/podcast.png" alt="image">
+								</div>
+								<div class="item-our-blog__box box-item-our-blog">
+									<div class="box-item-our-blog__course">Marketing</div>
+									<div class="box-item-our-blog__calendar">
+										<div class="box-item-our-blog__icon icon">
+											<img src="img/icons/Calendar.png" alt="image">
+										</div>
+										<div class="box-item-our-blog__date">September 4, 2020</div>
+									</div>
+									<div class="box-item-our-blog__clock">
+										<div class="box-item-our-blog__icon icon">
+											<img src="img/icons/Clock.png" alt="image">
+										</div>
+										<div class="box-item-our-blog__time">36 min</div>
+									</div>
+									<h3 class="item-our-blog__title">What is traffic arbitrage and does it really make money?</h3>
+									<p class="item-our-blog__text">Pharetra, ullamcorper iaculis viverra parturient sed id sed. Convallis proin dignissim lacus, purus gravida...</p>
+									<a class="item-our-blog__link" href="#"><span>Listen</span></a>
+								</div>
+							</div>
+							<!--our-blog__item-2-->
+							<div class="our-blog__item item-our-blog">
+								<div class="item-our-blog__image">
+									<img src="img/video.png" alt="image">
+								</div>
+								<div class="item-our-blog__box box-item-our-blog">
+									<div class="box-item-our-blog__course">Management</div>
+									<div class="box-item-our-blog__calendar">
+										<div class="box-item-our-blog__icon icon">
+											<img src="img/icons/Calendar.png" alt="image">
+										</div>
+										<div class="box-item-our-blog__date">August 25, 2020</div>
+									</div>
+									<div class="box-item-our-blog__clock">
+										<div class="box-item-our-blog__icon icon">
+											<img src="img/icons/Clock.png" alt="image">
+										</div>
+										<div class="box-item-our-blog__time">45 min</div>
+									</div>
+									<h3 class="item-our-blog__title">What to do and who to talk to if you want to get feedback on the product</h3>
+									<p class="item-our-blog__text">Neque a, senectus consectetur odio in aliquet nec eu. Ultricies ac nibh urna urna sagittis faucibus...</p>
+									<a class="item-our-blog__link" href="#"><span>Watch</span></a>
+								</div>
+							</div>
+							<!--our-blog__item-3-->
+							<div class="our-blog__item item-our-blog">
+								<div class="item-our-blog__image">
+									<img src="img/article.png" alt="image">
+								</div>
+								<div class="item-our-blog__box box-item-our-blog">
+									<div class="box-item-our-blog__course">Design
+									</div>
+									<div class="box-item-our-blog__calendar">
+										<div class="box-item-our-blog__icon icon">
+											<img src="img/icons/Calendar.png" alt="image">
+										</div>
+										<div class="box-item-our-blog__date">August 8, 2020
+										</div>
+									</div>
+									<div class="box-item-our-blog__clock">
+										<div class="box-item-our-blog__icon icon">
+											<img src="img/icons/Clock.png" alt="image">
+										</div>
+									</div>
+									<h3 class="item-our-blog__title">Should you choose a creative profession if you are attracted to creativity?</h3>
+									<p class="item-our-blog__text">Curabitur nisl tincidunt eros venenatis vestibulum ac placerat. Tortor, viverra sed vulputate ultrices...</p>
+									<a class="item-our-blog__link" href="@"><span>Read</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--subscribe	-->
+				<div class="subscribe">
+					<div class="subscribe__container">
+						<!--block-header-->
+						<div class="block-header">
+							<h3 class="block-header__sub-title">Don’t miss anything</h3>
+							<h2 class="block-header__title">Subscribe to the Createx School announcements</h2>
+						</div>
+						<!--subscribe__form-->
+						<div class="subscribe__form">
+							<div class="subscribe__input">
+							</div>
+							<div class="subscribe__button">Subscribe
+							</div>
+						</div>
+						<div class="subscribe__image">
+							<img src="/img/illustration3.png" alt="illustration">
+						</div>
 					</div>
 				</div>
 			</div>
-
-
 		</main>
-		<footer>
+		<!--footer-->
+		<footer class="footer">
+			<div class="footer__container">
+				<!--footer__title-->
+				<div class="footer__title">
+					<a class="footer__logo" href="#">
+						<img src="img/icons/logo.png" alt="logo">
+					</a>
+					<p class="footer__text">Createx Online School is a leader in online studying. We have lots of courses and programs from the main market experts. We provide relevant approaches to online learning, internships and employment in the largest companies in the country. </p>
+					<!--footer__social-->
+					<div class="footer__social social-footer">
+						<a class="social-footer__link" href="#">
+							<img src="img/icons/Facebook.png" alt="Facebook">
+						</a>
+						<a class="social-footer__link" href="#">
+							<img src="img/icons/Vector.png" alt="twitter">
+						</a>
+						<a class="social-footer__link" href="#">
+							<img src="img/icons/YouTube.png" alt="YouTube">
+						</a>
+						<a class="social-footer__link" href="#">
+							<img src="img/icons/telegram.png" alt="telegram">
+						</a>
+						<a class="social-footer__link" href="#">
+							<img src="img/icons/Instagram.png" alt="Instagram">
+						</a>
+						<a class="social-footer__link" href="#">
+							<img src="img/icons/Linked-In.png" alt="Linked-In">
+						</a>
+					</div>
+				</div>
+				<!--footer__map-->
+				<div class="footer__map map-footer">
+					<h3 class="map-footer__title">SITE MAP</h3>
+					<ul class="map-footer__item">
+						<li class="map-footer__list">
+							<a class="map-footer__link" href="#">About Us</a>
+						</li>
+						<li class="map-footer__list">
+							<a class="map-footer__link" href="#">Courses</a>
+						</li>
+						<li class="map-footer__list">
+							<a class="map-footer__link" href="#">Events</a>
+						</li>
+						<li class="map-footer__list">
+							<a class="map-footer__link" href="#">Blog</a>
+						</li>
+						<li class="map-footer__list">
+							<a class="map-footer__link" href="#">Contacts</a>
+						</li>
+					</ul>
+				</div>
+				<!--footer__courses-->
+				<div class="footer__courses courses-footer">
+					<h3 class="courses-footer__title">COURSES</h3>
+					<ul class="courses-footer__item">
+						<li class="courses-footer__list">
+							<a class="courses-footer__link" href="#">Marketing</a>
+						</li>
+						<li class="courses-footer__list">
+							<a class="courses-footer__link" href="#">Management</a>
+						</li>
+						<li class="courses-footer__list">
+							<a class="courses-footer__link" href="#">HR & Recruting</a>
+						</li>
+						<li class="courses-footer__list">
+							<a class="courses-footer__link" href="#">Design</a>
+						</li>
+						<li class="courses-footer__list">
+							<a class="courses-footer__link" href="#">Development</a>
+						</li>
+					</ul>
+				</div>
+				<!--footer__contact-us-->
+				<div class="footer__contact-us contact-us-footer">
+					<h3 class="contact-us-footer__title">CONTACT US</h3>
+					<ul class="contact-us-footer__nav">
+						<li class="contact-us-footer__fone">
+							<a href="#"><img src="/img/icons/iPhone.png" alt="iPhone"></a>
+							<a href="#">(405) 555-0128</a>
+						</li>
+						<li class="contact-us-footer__mail">
+							<a href="#"><img src="/img/icons/Mail.png" alt="iPhone"></a>
+							<a href="#">hello@createx.com</a>
+						</li>
+					</ul>
+				</div>
+				<!--footer__form-->
+				<div class="footer__form form-footer">
+					<h3 class="form-footer__title">SIGN UP TO OUR NEWSLETTER </h3>
+				</div>
+				<div class="form-footer__input">
+				</div>
+				<div class="form-footer__text">
+					*Subscribe to our newsletter to receive communications and early updates from Createx SEO Agency.
+				</div>
+			</div>
+			<!--footer-down-->
+			<div class="footer-down down-footer">
+				<div class="down-footer__author">
+					<span>© All rights reserved.</span>
+					<span>Made with</span>
+					<span>by Createx Studio </span>
+				</div>
+			</div>
+			<a class="down-footer__button" href="#">GO TO TOP</a>
 		</footer>
 	</div>
 </body>
